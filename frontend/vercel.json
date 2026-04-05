@@ -1,16 +1,4 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "env": [
-    {
-      "key": "VITE_API_URL",
-      "value": "https://3szvli0kq2.execute-api.us-east-1.amazonaws.com/prod/"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "outputDirectory": "./dist"
 }
