@@ -1,7 +1,18 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "./dist",
-  "env": {
-    "VITE_API_URL": "@vite-api-url"
-  }
+  "rewrites": [
+    {
+      "source": "/api/redirect",
+      "destination": "/api/redirect.js"
+    },
+    {
+      "source": "/:shortCode([a-z0-9]{8})",
+      "destination": "/api/redirect?shortUrl=:shortCode"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

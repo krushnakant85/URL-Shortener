@@ -12,7 +12,8 @@ export default function URLHistory({ urls, onClearHistory, onDeleteUrl }) {
   };
 
   const getShortUrlLink = (shortUrl) => {
-    return `${API_BASE_URL}${shortUrl}`;
+    // Use short code directly: /abc123 (will be rewritten by vercel.json to API redirect)
+    return `${window.location.origin}/${shortUrl}`;
   };
 
   const openUrl = (shortUrl) => {
